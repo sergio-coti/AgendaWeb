@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Agenda de Tarefas</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item" *ngIf="!isAuthenticated">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/app/autenticar-usuario"
+            >Autenticar Usuário</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="!isAuthenticated">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/app/criar-usuario"
+            >Criar Usuário</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/app/cadastrar-tarefas"
+            >Cadastrar Tarefas</a
+          >
+        </li>
+
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            routerLink="/app/consultar-tarefas"
+            >Consultar Tarefas</a
+          >
+        </li>
+
+      </ul>
+
+      <div class="d-flex align-items-center" *ngIf="isAuthenticated">
+        <span class="me-3">
+          <strong>{{ nomeUsuario }}</strong> <br>
+          <small>{{ emailUsuario }}</small>
+        </span>
+        <a href="#" class="btn btn-outline-secondary btn-sm" (click)="logout()">Sair do sistema</a>
+      </div>
+
+    </div>
+  </div>
+</nav>

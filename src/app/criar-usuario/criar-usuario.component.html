@@ -1,0 +1,51 @@
+<div class="row mt-3">
+    <div class="col-md-4 offset-md-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h4>Criação de conta de usuário</h4>
+                <p>Preencha seus dados para criar a sua conta.</p>
+                <hr/>
+
+                <div class="text-success mb-3">
+                    <strong>{{ mensagemSucesso }}</strong>
+                </div>
+
+                <div class="text-danger mb-3">
+                    <strong>{{ mensagemErro }}</strong>
+                </div>
+
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                    <div class="row mb-3">
+                        <label>Nome do usuário:</label>
+                        <input type="text" class="form-control" 
+                            placeholder="Digite o nome aqui."
+                            formControlName="nome" />
+                    </div>
+
+                    <div class="row mb-3">
+                        <label>Email do usuário:</label>
+                        <input type="text" class="form-control" 
+                            placeholder="Digite o email aqui."
+                            formControlName="email" />
+                    </div>
+
+                    <div class="row mb-3">
+                        <label>Senha do usuário:</label>
+                        <input type="password" class="form-control" 
+                            placeholder="Digite a senha aqui"
+                            formControlName="senha" />
+                    </div>
+
+                    <div class="row mb-3">
+                        <input type="submit" class="btn btn-success"
+                            value="Realizar Cadastro"/>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
